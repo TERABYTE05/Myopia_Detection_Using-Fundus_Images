@@ -1,57 +1,66 @@
+👁️ Myopia Detection From Fundus Images
+
 A classical machine-learning pipeline for detecting Myopia from retinal fundus images using handcrafted image features and a Random Forest classifier.
 
-Achieved 97.50% accuracy on 2000 real fundus images.
+🏆 Achieved 97.50% accuracy on 2000 real fundus images
 
 🏷️ Tech Stack
 
-Python
+🐍 Python
 
-Google Colab
+☁️ Google Colab
 
-OpenCV
+👁️ OpenCV
 
-NumPy / Pandas
+📊 NumPy / Pandas
 
-Scikit-Learn
+🧠 Scikit-Learn
 
-Scikit-Image
+🧵 Scikit-Image
 
-Matplotlib
+📈 Matplotlib
 
 🎯 Objective
 
-Detect whether a fundus image belongs to a Myopic or Normal eye using non-deep-learning methods.
+Detect whether a retinal fundus image belongs to a Myopic or Normal eye using classical ML + image processing (no deep learning).
 
 📂 Dataset Structure
 eye_images/
 ├── myopic/
 └── normal/
 
+
 Description
 
-myopic/ → Contains myopic eye fundus images
+myopic/ → Myopic retina images
 
-normal/ → Contains normal eye fundus images
+normal/ → Normal retina images
 
-Dataset is loaded from eye_images.zip stored on Google Drive.
+Dataset is loaded from eye_images.zip stored in Google Drive.
 
 📊 Features Used
 Category	Feature Names
 Intensity	Brightness, Contrast
-Color	Mean Red, Mean Green, Mean Blue, Red-Green ratio, Red-Blue ratio
+Color	Mean R, G, B, Red-Green ratio, Red-Blue ratio
 Texture	Shannon Entropy
-Structure	Edge Count (Canny)
+Structure	Canny Edge Count
 Sharpness	Laplacian Variance (Blurriness)
 
-Total features: 10
+🧮 Total features: 10
 
 ⚙️ Pipeline
-Load Images → Extract Features → Train/Test Split → Random Forest → Evaluation → Predict New Images
+Load Images 
+→ Extract Features 
+→ Train/Test Split 
+→ Random Forest 
+→ Evaluation 
+→ Predict New Images
 
 ✅ Model Results
 
-Accuracy: 97.50%
-Model: Random Forest (100 trees)
+🎯 Accuracy: 97.50%
+
+🌲 Model: Random Forest (100 trees)
 
 Metric	Score
 Precision	98%
@@ -61,35 +70,35 @@ Confusion Matrix
 	Pred Normal	Pred Myopic
 Actual Normal	194	7
 Actual Myopic	3	196
-📈 Visual Outputs (stored in /assets/)
+📈 Visual Outputs
 File	Meaning
-assets/myopic_hist.png	Histogram for sample myopic eye
-assets/normal_hist.png	Histogram for sample normal eye
-assets/avg_hist_myopic.png	Average histogram across 1000 myopic images
-assets/avg_hist_normal.png	Average histogram across 1000 normal images
+assets/myopic_hist.png	Histogram for myopic fundus image
+assets/normal_hist.png	Histogram for normal fundus image
+assets/avg_hist_myopic.png	Avg histogram (1000 myopic images)
+assets/avg_hist_normal.png	Avg histogram (1000 normal images)
 assets/pipeline.png	ML pipeline diagram
-assets/test_prediction.png	Screenshot of sample prediction
+assets/test_prediction.png	Output example
 
-These images will be generated when you run the notebook.
+✅ Images auto-generated when running the notebook
 
 🚀 How to Run
-1️⃣ Mount Drive in Colab
+1️⃣ Mount Drive
 from google.colab import drive
 drive.mount('/content/drive')
 
-2️⃣ Extract Dataset
+2️⃣ Place Dataset
 
-Place eye_images.zip in Google Drive:
+Upload eye_images.zip to:
 
 /content/drive/My Drive/eye_images.zip
 
-3️⃣ Train Model
+3️⃣ Train the Model
 
-Run the feature extraction and training cells.
+Run the notebook cells for feature extraction + training.
 
-4️⃣ Predict a New Fundus Image
+4️⃣ Predict a New Image
 result = predict_image("test_fundus.png")
-print(result)  # Prints: Myopic / Normal
+print(result)  # Myopic / Normal
 
 📦 Dependencies
 opencv-python
@@ -101,38 +110,33 @@ scikit-image
 tqdm
 
 
-Install manually if not using Colab:
+Install manually (if needed):
 
 pip install opencv-python scikit-image tqdm
 
 🧪 Notes
 
-No deep learning used — explainable ML pipeline
+✅ No deep learning — explainable ML
 
-Works offline, CPU-friendly
+✅ CPU-friendly & lightweight
 
-Good baseline for clinical imaging models
+✅ Suitable for early-stage fundus analysis
 
-🔮 Future Work
-
-Add CNN / RETFound model comparison
-
-Build Streamlit Web App
-
-Export model for mobile use (TFLite)
-
-Clinical trial testing on new datasets
-
+🔮 Future Enhancements
+Feature	Status
+CNN / RETFound comparison	🔜
+Streamlit Web App	🎨 Planned
+Mobile app (TFLite)	📱 Future
+Clinical dataset validation	🏥 Research stage
 📜 License
 
-MIT — feel free to use and modify.
+MIT License — free to use & modify
 
 ✨ Credits
 
 Developed by Teesha
-
-AI assistance for formatting & automation only.
+AI assistance for formatting only
 
 🙌 Support
 
-If you like this repo, please ⭐ it — helps others discover it!
+If you like this project, please ⭐ the repo. It helps others find it!
