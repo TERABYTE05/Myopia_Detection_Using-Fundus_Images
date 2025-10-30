@@ -1,11 +1,6 @@
 # Myopia-Detection-Using-Fundus-Images
 
-# Myopia Detection Assistant
 
-**Myopia Detection Assistant** is a classical machine-learning tool designed to classify **retinal fundus images** as either **Myopic** or **Normal**.  
-It uses handcrafted image features and a **Random Forest classifier** to provide fast, interpretable, and accurate eye-health screening without deep learning.
-
----
 
 ## Features
 
